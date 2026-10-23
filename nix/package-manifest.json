@@ -1,0 +1,24 @@
+{
+  "source": {
+    "type": "github-release",
+    "owner": "storytold",
+    "repo": "photocraft",
+    "version": "0.14.0",
+    "tag": "v0.14.0",
+    "archive": "photocraft-0.14.0-linux-x86_64.tar.gz",
+    "url": "https://github.com/storytold/photocraft/releases/download/v0.14.0/photocraft-0.14.0-linux-x86_64.tar.gz",
+    "hash": "sha256-PR9gp2wlqvv1PyPP7dNoe9metvUwmSDhQNWIvTISyTY="
+  },
+  "package": {
+    "repo": "photocraft",
+    "version": "0.14.0"
+  },
+  "binary": {
+    "name": "photocraft"
+  },
+  "meta": {
+    "description": "Photocraft, an open-source creative app from the ArtCraft Craft app suite",
+    "homepage": "https://github.com/storytold/photocraft",
+    "licenseSpdx": "MIT OR Apache-2.0"
+  }
+}

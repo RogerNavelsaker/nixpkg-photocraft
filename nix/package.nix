@@ -1,9 +1,25 @@
-{ alsa-lib, autoPatchelfHook, fetchurl, lib, stdenv, stdenvNoCC }:
+{ alsa-lib, autoPatchelfHook, fetchurl, lib, libGL, libx11, libxcb, libxkbcommon, libxcursor, libxext, libxfixes, libxi, libxrandr, libxrender, stdenv, stdenvNoCC, vulkan-loader, wayland }:
 
 let
   manifest = builtins.fromJSON (builtins.readFile ./package-manifest.json);
   binary = manifest.binary.name;
   version = manifest.source.version;
+  runtimeLibs = [
+    alsa-lib
+    libGL
+    libxkbcommon
+    libx11
+    libxcursor
+    libxext
+    libxfixes
+    libxi
+    libxrandr
+    libxrender
+    libxcb
+    stdenv.cc.cc.lib
+    vulkan-loader
+    wayland
+  ];
 in
 stdenvNoCC.mkDerivation {
   pname = binary;
@@ -15,7 +31,8 @@ stdenvNoCC.mkDerivation {
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
-  buildInputs = [ alsa-lib stdenv.cc.cc.lib ];
+  buildInputs = runtimeLibs;
+  runtimeDependencies = runtimeLibs;
   sourceRoot = "${binary}-${version}-linux-x86_64";
   dontConfigure = true;
   dontBuild = true;

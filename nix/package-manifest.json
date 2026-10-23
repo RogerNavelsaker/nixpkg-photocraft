@@ -17,7 +17,7 @@
     "name": "photocraft"
   },
   "meta": {
-    "description": "Photocraft, an open-source creative app from the ArtCraft Craft app suite",
+    "description": "PhotoCraft, an open-source creative app from the ArtCraft Craft app suite",
     "homepage": "https://github.com/storytold/photocraft",
     "licenseSpdx": "MIT OR Apache-2.0"
   }
